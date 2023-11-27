@@ -19,7 +19,7 @@ class TypesRepositoryImpl implements TypesRepository {
       await remoteDataSource.getTypesList();
       return Right(remotePokemonList);
     } on ServerException {
-      return const Left(ServerFailure('Failed to get pokemon list'));
+      return const Left(ServerFailure('Failed to get types list'));
     } on SocketException {
       return const Left(ConnectionFailure('Failed to connect to the network'));
     }

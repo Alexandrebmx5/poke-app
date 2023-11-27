@@ -84,7 +84,10 @@ class RemoteDataSourceImpl implements RemoteDataSource {
     final List<Pokemon> pokemonTypesList = [];
 
     for (var i = 0; i < pokemon.length; i++) {
-      pokemonTypesList.add((await getPokemon(pokemon[i].name!))[0]);
+      Pokemon pk = (await getPokemon(pokemon[i].name!))[0];
+      if(pk.types!.length == 1){
+        pokemonTypesList.add((await getPokemon(pokemon[i].name!))[0]);
+      }
     }
 
     return pokemonTypesList;

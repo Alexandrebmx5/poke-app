@@ -100,13 +100,16 @@ class PokemonCard extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(width: 17),
-                              Text(
-                                pokemon.name != null
-                                    ? pokemon.name!.toUpperCase()
-                                    : '',
-                                style: const TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
+                              Flexible(
+                                child: Text(
+                                  pokemon.name != null
+                                      ? pokemon.name!.toUpperCase()
+                                      : '',
+                                  overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ],

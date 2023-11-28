@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:poke_app/src/controllers/menu_controller.dart';
+import 'package:poke_app/src/presentation/pages/favorites/favorites_screen.dart';
 import 'package:poke_app/src/presentation/pages/home/home_screen.dart';
 import 'package:poke_app/src/presentation/pages/types/types_screen.dart';
 import 'package:provider/provider.dart';
@@ -22,6 +23,7 @@ class _BaseScreenState extends State<BaseScreen> {
         children: <Widget>[
           HomeScreen(),
           TypesScreen(),
+          FavoritesScreen()
         ],
       ),
     );

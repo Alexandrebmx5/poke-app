@@ -2,6 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:poke_app/src/presentation/blocs/blocs.dart';
+import 'package:poke_app/src/presentation/blocs/favorites/favorites_cubit.dart';
+import 'package:poke_app/src/presentation/blocs/favorites/favorites_state.dart';
 import 'package:responsive_grid/responsive_grid.dart';
 
 class DetailsScreen extends StatefulWidget {
@@ -17,9 +19,14 @@ class DetailsScreen extends StatefulWidget {
 }
 
 class _DetailsScreenState extends State<DetailsScreen> {
+
+  late FavoritesCubit _favoritesCubit;
+
   @override
   void initState() {
     context.read<DetailsCubit>().getByName(widget.id);
+    _favoritesCubit = context.read<FavoritesCubit>();
+    _favoritesCubit.getAll();
     super.initState();
   }
 
@@ -29,6 +36,47 @@ class _DetailsScreenState extends State<DetailsScreen> {
       backgroundColor: Colors.deepPurple,
       appBar: AppBar(
         title: Text('${widget.id.toUpperCase()}'),
+        actions: [
+          BlocBuilder<DetailsCubit, DetailsState>(
+            builder: (context, state) {
+              if (state is DetailsLoading) {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              } else if (state is DetailsHasData) {
+                final pokemon = state.pokemon;
+
+                return BlocBuilder<FavoritesCubit, FavoritesState>(
+                  builder: (context, state) {
+                    if (state is FavoritesLoading) {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    } else if (state is  FavoritesHasList) {
+                      return IconButton(
+                          onPressed: (){
+                            _favoritesCubit.toggleFavorite(pokemon, state.result);
+                            _favoritesCubit.getAll();
+                          },
+                          icon: _favoritesCubit.hasFavorite(pokemon, state.result) ? Icon(Icons.favorite) : Icon(Icons.favorite_border)
+                      );
+
+                    } else if (state is FavoritesError) {
+                      return SizedBox();
+                    } else {
+                      return SizedBox();
+                    }
+                  },
+                );
+
+              } else if (state is DetailsError) {
+                return const SizedBox.shrink();
+              } else {
+                return const SizedBox.shrink();
+              }
+            },
+          ),
+        ],
       ),
       body: BlocBuilder<DetailsCubit, DetailsState>(
         builder: (context, state) {

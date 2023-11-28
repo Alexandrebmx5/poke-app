@@ -25,6 +25,12 @@ class Types {
     slot: json["slot"] == null ? null : json["slot"],
   );
 
+  factory Types.fromMapFavorites(Map<String, dynamic> json) => Types(
+    name: json["name"] == null ? null : json["name"],
+    url: json["url"] == null ? null : json["url"],
+    slot: json["slot"] == null ? null : json["slot"],
+  );
+
   factory Types.fromMapTwo(Map<String, dynamic> json) => Types(
     name: json["name"] == null ?  null : json["name"],
     url: json["url"] == null ? null : json["url"],

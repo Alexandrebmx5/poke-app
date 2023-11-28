@@ -27,6 +27,10 @@ class _SideMenuState extends State<SideMenu> {
           SideTile(
             title: 'Tipos de pokemon',
             page: 1,
+          ),
+          SideTile(
+            title: 'Favoritos',
+            page: 2,
           )
         ],
       ),

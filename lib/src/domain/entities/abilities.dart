@@ -21,6 +21,13 @@ class Abilities {
     slot: json["slot"] == null ? null : json["slot"],
   );
 
+  factory Abilities.fromMapFavorites(Map<String, dynamic> json) => Abilities(
+    name: json["name"] == null ? null : json["name"],
+    url: json["url"] == null ? null : json["url"],
+    isHidden: json["is_hidden"] == null ? null : json["is_hidden"],
+    slot: json["slot"] == null ? null : json["slot"],
+  );
+
   Map<String, dynamic> toMap() => {
     "name": name == null ? null : name,
     "url": url == null ? null : url,

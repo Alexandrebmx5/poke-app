@@ -21,6 +21,13 @@ class Stats {
     effort: json["effort"] == null ? null : json["effort"],
   );
 
+  factory Stats.fromMapFavorites(Map<String, dynamic> json) => Stats(
+    name: json["name"] == null ? null : json["name"],
+    url: json["url"] == null ? null : json["url"],
+    baseStat: json["base_stat"] == null ? null : json["base_stat"],
+    effort: json["effort"] == null ? null : json["effort"],
+  );
+
   Map<String, dynamic> toMap() => {
     "name": name == null ? null : name,
     "url": url == null ? null : url,

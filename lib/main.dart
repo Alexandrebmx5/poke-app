@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:poke_app/src/core/framework/router/router.dart';
 import 'package:poke_app/src/presentation/blocs/details/details_cubit.dart';
+import 'package:poke_app/src/presentation/blocs/favorites/favorites_cubit.dart';
 import 'package:poke_app/src/presentation/blocs/pokemon/pokemon_cubit.dart';
 import 'package:poke_app/src/injector.dart' as di;
 import 'package:poke_app/src/presentation/blocs/types/pokemon_types_cubit.dart';
@@ -30,6 +31,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (_) => di.getIt<PokemonTypesCubit>(),
+        ),
+        BlocProvider(
+          create: (_) => di.getIt<FavoritesCubit>(),
         ),
       ],
       child: MaterialApp(

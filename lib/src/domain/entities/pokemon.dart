@@ -35,6 +35,9 @@ class Pokemon {
   factory Pokemon.fromJsonTwo(String str) =>
       Pokemon.fromMapTwo(json.decode(str));
 
+  factory Pokemon.fromJsonFavorites(String str) =>
+      Pokemon.fromMapFavorites(json.decode(str));
+
   String toJson() => json.encode(toMap());
 
   factory Pokemon.fromMap(Map<String, dynamic> json) => Pokemon(
@@ -55,6 +58,21 @@ class Pokemon {
   factory Pokemon.fromMapTwo(Map<String, dynamic> json) => Pokemon(
     name: json["pokemon"]['name'] == null ? null : json["pokemon"]["name"],
     url: json["pokemon"]["url"] == null ? null : json["pokemon"]["url"],
+  );
+
+  factory Pokemon.fromMapFavorites(Map<String, dynamic> json) => Pokemon(
+    id: json["id"] == null ? null : json["id"],
+    name: json["name"] == null ? null : json["name"],
+    height: json["height"] == null ? null : json["height"],
+    weight: json["weight"] == null ? null : json["weight"],
+    abilities: json["abilities"] == null ? null : (json["abilities"] as List<dynamic>).map((e) =>
+        Abilities.fromMapFavorites(e as Map<String, dynamic>)).toList(),
+    forms: json["forms"] == null ? null : (json["forms"] as List<dynamic>).map((e) =>
+        Forms.fromMap(e as Map<String, dynamic>)).toList(),
+    stats: json["stats"] == null ? null : (json["stats"] as List<dynamic>).map((e) =>
+        Stats.fromMapFavorites(e as Map<String, dynamic>)).toList(),
+    types: json["types"] == null ? null : (json["types"] as List<dynamic>).map((e) =>
+        Types.fromMapFavorites(e as Map<String, dynamic>)).toList(),
   );
 
   Map<String, dynamic> toMap() => {

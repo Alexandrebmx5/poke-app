@@ -1,16 +1,37 @@
-# poke_app
+# The Movie
 
-A new Flutter project.
+### Autor
 
-## Getting Started
+- Desenvolvedor: Alexandre Silva
+- Email: alexandrebmx5@gmail.com
 
-This project is a starting point for a Flutter application.
+#### Projeto
 
-A few resources to get you started if this is your first Flutter project:
+- [Dart 3.2.0](https://dart.dev/)
+- [Flutter 3.16.0](https://flutter.dev/)
+- [Gerenciamento de estado](https://pub.dev/packages/flutter_bloc)
+- [Gerenciamento de cache](https://pub.dev/packages/flutter_bloc)
+- [Clean Architecture]
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Execução do projeto
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### git clone
+
+```
+git clone https://github.com/Alexandrebmx5/poke-app.git
+```
+
+#### Install
+
+```
+flutter pub get
+```
+
+#### Run
+
+```
+flutter run
+```
+
+#### Aplicativo para teste
+[Apk](assets/apk/app-release.apk)

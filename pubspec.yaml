@@ -1,5 +1,5 @@
 name: poke_app
-description: "A new Flutter project."
+description: "Project Poke App"
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
@@ -24,6 +24,7 @@ dependencies:
   rxdart: ^0.27.7
   cached_network_image: ^3.3.0
   shared_preferences: ^2.2.2
+  flutter_launcher_icons: ^0.13.1
   flutter_localizations:
     sdk: flutter
 
@@ -35,3 +36,9 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  remove_alpha_ios: true
+  image_path: "assets/icon/icon-app.png"

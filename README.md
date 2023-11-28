@@ -9,8 +9,8 @@
 
 - [Dart 3.2.0](https://dart.dev/)
 - [Flutter 3.16.0](https://flutter.dev/)
-- [Gerenciamento de estado](https://pub.dev/packages/flutter_bloc)
-- [Gerenciamento de cache](https://pub.dev/packages/flutter_bloc)
+- [Gerenciamento de estado (cubit)](https://pub.dev/packages/flutter_bloc)
+- [Gerenciamento de cache (shared preference)](https://pub.dev/packages/flutter_bloc)
 - [Clean Architecture]
 
 ## Execução do projeto

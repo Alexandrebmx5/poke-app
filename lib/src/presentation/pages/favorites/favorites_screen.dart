@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:poke_app/src/presentation/blocs/favorites/favorites_cubit.dart';
-import 'package:poke_app/src/presentation/blocs/favorites/favorites_state.dart';
+import 'package:poke_app/src/presentation/blocs/blocs.dart';
 import 'package:poke_app/src/presentation/drawer/side_menu.dart';
 import 'package:poke_app/src/presentation/widgets/pokemon_card.dart';
 

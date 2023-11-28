@@ -6,3 +6,5 @@ export 'types/types_cubit.dart';
 export 'types/types_state.dart';
 export 'types/pokemon_types_cubit.dart';
 export 'types/pokemon_types_state.dart';
+export 'favorites/favorites_cubit.dart';
+export 'favorites/favorites_state.dart';

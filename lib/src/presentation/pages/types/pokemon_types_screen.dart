@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:poke_app/src/domain/entities/pokemon.dart';
-import 'package:poke_app/src/presentation/blocs/types/pokemon_types_cubit.dart';
-import 'package:poke_app/src/presentation/blocs/types/pokemon_types_state.dart';
+import 'package:poke_app/src/presentation/blocs/blocs.dart';
 import 'package:poke_app/src/presentation/widgets/pokemon_card.dart';
 
 class PokemonTypesScreen extends StatefulWidget {
